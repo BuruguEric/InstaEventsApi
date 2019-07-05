@@ -9,7 +9,7 @@ use App\Http\Resources\Event;
 
 class EventController extends Controller
 {
-    public function __construct(Type $var = null) {
+    public function __construct() {
         \Cloudinary::config(array(
             "cloud_name" => "CLOUDINARY_NAME",
             "api_key" => "CLOUDINARY_API_KEY",
@@ -49,7 +49,7 @@ class EventController extends Controller
         $event->event_artists = $request->event_id;
         $event->event_poster = $request->event_poster;
         $event->save();
-        return response()->json($event);
+        return response()->json($request->all(),200);
     }
 
     /**
