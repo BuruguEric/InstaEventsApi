@@ -9,7 +9,7 @@ use App\Http\Resources\Event;
 
 class EventController extends Controller
 {
-    public function __construct() {
+    public function __construct(Type $var = null) {
         \Cloudinary::config(array(
             "cloud_name" => "CLOUDINARY_NAME",
             "api_key" => "CLOUDINARY_API_KEY",
