@@ -9,6 +9,14 @@ use App\Http\Resources\Event;
 
 class EventController extends Controller
 {
+    public function __construct() {
+        \Cloudinary::config(array(
+            "cloud_name" => "CLOUDINARY_NAME",
+            "api_key" => "CLOUDINARY_API_KEY",
+            "api_secret" => "CLOUDINARY_API_SECRET"
+        ));
+    }
+
     /**
      * Display a listing of the resource.
      *
