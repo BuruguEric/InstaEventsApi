@@ -12,7 +12,7 @@ class CreateCategoryTable extends Migration
      * @return void
      */
     public function up()
-    {
+    { 
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('category_id');
             $table->string('category');
