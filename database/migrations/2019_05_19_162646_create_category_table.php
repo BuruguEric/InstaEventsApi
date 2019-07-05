@@ -17,7 +17,7 @@ class CreateCategoryTable extends Migration
             $table->bigIncrements('category_id');
             $table->string('category');
             $table->string('category_description')->nullable();
-            $table->string('category_poster');
+            $table->string('category_poster')->nullable();
             $table->timestamps();
         });
     }

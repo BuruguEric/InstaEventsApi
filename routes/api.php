@@ -18,9 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // list all categories
-Route::get('Category' , 'CategoryController@index');
-// list single categories
-Route::get('Category' , 'CategoryController@show');
+Route::get('Category' , 'CategoryController@allCategories');
 // list all the events
 Route::get('Events' , 'EventController@allEvents');
 // list single events

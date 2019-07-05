@@ -24,7 +24,7 @@ class CreateEventsTables extends Migration
             $table->string('event_host')->nullable();
             $table->time('event_time');
             $table->string('event_artists')->nullable();
-            $table->string('event_poster');
+            $table->string('event_poster')->nullable();
             $table->timestamps();
         });
     }

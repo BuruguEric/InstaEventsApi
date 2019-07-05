@@ -17,6 +17,8 @@ class category extends JsonResource
         //return parent::toArray($request);
         return [
             'category' => $this->category,
+            'category_description' => $this->category_description,
+            'category_poster' => $this->category_poster,
         ];
     }
 }
