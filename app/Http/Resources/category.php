@@ -17,7 +17,7 @@ class category extends JsonResource
         return [
             'category' => $this->category,
             'category_description' => $this->category_description,
-            // 'category_poster' => $this->category_poster,
+            'category_poster' => $this->category_poster,
         ];
     }
 }

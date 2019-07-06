@@ -18,7 +18,7 @@ class CategoryController extends Controller
     {
         $cat = Categories::all();
 
-        return response()->json($cat);
+        return category::collection($cat);
     }
 
     public function createCategories(Request $request)
