@@ -38,7 +38,7 @@ class EventController extends Controller
      */
     public function createEvent(Request $request)
     {
-        $event = Event::create($request->all());
+        $event = Event::updateOrCreate($request->all());
         // $event = Input::all();
         // $event->category_id = $request->category_id;
         // $event->event_name = $request->event_name;
@@ -49,7 +49,7 @@ class EventController extends Controller
         // $event->event_time = $request->event_time;
         // $event->event_artists = $request->event_id;
         // $event->event_poster = $request->event_poster;
-        // $event->save();
+        $event->save();
         return response()->json($event,201);
     }
 
