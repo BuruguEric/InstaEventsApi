@@ -51,6 +51,7 @@ class EventController extends Controller
         // $event->event_artists = $request->event_id;
         // $event->event_poster = $request->event_poster;
         $event->save();
+        dd($event->event_poster);
         return response()->json($event,201);
     }
 
