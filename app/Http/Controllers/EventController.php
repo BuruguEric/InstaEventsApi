@@ -38,7 +38,7 @@ class EventController extends Controller
      */
     public function createEvent(Request $request)
     {
-        $event = Event::updateOrCreate($request->all());
+        $event = Events::create($request->all());
         // $event = Input::all();
         // $event->category_id = $request->category_id;
         // $event->event_name = $request->event_name;
