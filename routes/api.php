@@ -18,14 +18,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // list all categories
-Route::get('Category' , 'CategoryController@allCategories');
+Route::get('category' , 'CategoryController@allCategories');
+// post categories
+Route::post('category' , 'CategoryController@createCategories');
 // list all the events
-Route::get('Events' , 'EventController@allEvents');
+Route::get('events' , 'EventController@allEvents');
 // list single events
-Route::get('Events/{event_id}' , 'EventController@showEvent');
+Route::get('events/{event_id}' , 'EventController@showEvent');
 // create new event
-Route::post('Events' , 'EventController@createEvent');
+Route::post('events' , 'EventController@createEvent');
 // Update an event
-Route::put('Events' , 'EventController@updateEvent');
+Route::put('events' , 'EventController@updateEvent');
 // Delete an event
-Route::delete('Events' , 'EventController@destroyEvent');
+Route::delete('events' , 'EventController@destroyEvent');
