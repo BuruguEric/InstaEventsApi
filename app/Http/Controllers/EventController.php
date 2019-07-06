@@ -12,7 +12,7 @@ class EventController extends Controller
     public function __construct() {
         \Cloudinary::config(array(
             "cloud_name" => env("CLOUDINARY_NAME"),
-            "api_key" => env("CLOUDINARY_API_KEY"),
+            "api_key" => 863943961898362,
             "api_secret" => env("CLOUDINARY_API_SECRET")
         ));
     }
