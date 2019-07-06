@@ -89,7 +89,7 @@ class EventController extends Controller
     public function destroyEvent($id)
     {
         $event = Events::where('event_id',$id)->get();
-        $event->delete();
+        $event->each->delete();
         return response()->json('Event Removed Successfully!');
     }
 }
