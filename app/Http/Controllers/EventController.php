@@ -27,7 +27,7 @@ class EventController extends Controller
         // get events
         $events = Events::all();
         // return collection of events as a resource
-        return response()->json($events);
+        return Event::collection($events);
     }
 
     /**
