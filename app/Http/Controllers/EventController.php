@@ -39,7 +39,7 @@ class EventController extends Controller
     public function createEvent(Request $request)
     {
         $event = Events::create($request->all());
-        $event->event_poster = \Cloudinary\Uploader::upload($request->file[tmp_name]);
+        $event->event_poster = \Cloudinary\Uploader::upload($request->file["tmp_name"]);
         // $event = Input::all();
         // $event->category_id = $request->category_id;
         // $event->event_name = $request->event_name;
