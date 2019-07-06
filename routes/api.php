@@ -28,6 +28,6 @@ Route::get('events/{event_id}' , 'EventController@showEvent');
 // create new event
 Route::post('events' , 'EventController@createEvent');
 // Update an event
-Route::put('events' , 'EventController@updateEvent');
+Route::put('events/{event_id}' , 'EventController@updateEvent');
 // Delete an event
 Route::delete('events' , 'EventController@destroyEvent');
