@@ -59,7 +59,7 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function updateEvent($id)
+    public function updateEvent($id, Request $request)
     {
         $event = Event::where('id',$id)->update([$request->all()]);
         $event->save();
