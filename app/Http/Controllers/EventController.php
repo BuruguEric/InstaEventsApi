@@ -11,9 +11,9 @@ class EventController extends Controller
 {
     public function __construct() {
         \Cloudinary::config(array(
-            "cloud_name" => env(CLOUDINARY_NAME),
-            "api_key" => env(CLOUDINARY_API_KEY),
-            "api_secret" => env(CLOUDINARY_API_SECRET)
+            "cloud_name" => env("CLOUDINARY_NAME"),
+            "api_key" => env("CLOUDINARY_API_KEY"),
+            "api_secret" => env("CLOUDINARY_API_SECRET")
         ));
     }
 
@@ -39,7 +39,7 @@ class EventController extends Controller
     public function createEvent(Request $request)
     {
         $event = Events::create($request->all());
-        \Cloudinary\Uploader::upload($request->file[tmp_name]);
+        $event->event_poster = \Cloudinary\Uploader::upload($request->file[tmp_name]);
         // $event = Input::all();
         // $event->category_id = $request->category_id;
         // $event->event_name = $request->event_name;
