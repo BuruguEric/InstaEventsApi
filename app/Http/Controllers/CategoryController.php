@@ -28,9 +28,9 @@ class CategoryController extends Controller
         return response()->json($cat);
     }
 
-    public function updateCategory(Request $request)
+    public function updateCategory($id, Request $request)
     {
-        $cat = Categories::create($request->all());
+        $cat = Categories::where();
         $cat->save();
         return response()->json($cat);
     }
