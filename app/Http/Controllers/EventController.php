@@ -61,7 +61,7 @@ class EventController extends Controller
      */
     public function updateEvent($id, Request $request)
     {
-        $event = Event::where('id',$id)->update([$request->all()]);
+        $event = Events::where('event_id',$id)->update([$request->all()]);
         $event->save();
         return response()->json($event);
     }
@@ -88,7 +88,7 @@ class EventController extends Controller
      */
     public function destroyEvent($id)
     {
-        $event = Event::where('id',$id)->get();
+        $event = Events::where('event_id',$id)->get();
         $event->delete();
         return response()->json('Event Removed Successfully!');
     }
