@@ -54,7 +54,7 @@ class EventController extends Controller
     {
         $event = Events::find($id)->update([json_decode($request->all())]);
         
-        $event->save();
+        // $event->save();
         
         return response()->json($event);
     }
