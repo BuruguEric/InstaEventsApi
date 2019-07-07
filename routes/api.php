@@ -19,8 +19,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // list all categories
 Route::get('category' , 'CategoryController@allCategories');
+// list all categories
+Route::get('category/{category_id}' , 'CategoryController@showCategory');
 // post categories
 Route::post('category' , 'CategoryController@createCategories');
+// update categories
+Route::put('category/{category_id}','CategoryController@updateCategory');
+// delete categories
+Route::delete('category/{category_id}','CategoryController@deleteCategory');
 // list all the events
 Route::get('events' , 'EventController@allEvents');
 // list single events
