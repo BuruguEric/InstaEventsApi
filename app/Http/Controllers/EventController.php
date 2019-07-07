@@ -52,7 +52,7 @@ class EventController extends Controller
      */
     public function updateEvent($id, Request $request)
     {
-        $event = Events::where('event_id',$id)->update([json_encode($request->all())]);
+        $event = Events::where('event_id',$id)->update([json_decode($request->all())]);
         $event->save();
         return response()->json($event);
     }
