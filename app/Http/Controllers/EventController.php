@@ -52,7 +52,7 @@ class EventController extends Controller
      */
     public function updateEvent($id, Request $request)
     {
-        $event = Events::find($id)->update([$request->all()]);
+        $event = Events::find($id)->update($request->all());
         
         // $event->save();
         
