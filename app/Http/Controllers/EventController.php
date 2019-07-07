@@ -41,7 +41,7 @@ class EventController extends Controller
         $event = Events::create($request->all());
         $event->event_poster = \Cloudinary\Uploader::upload($_FILES['file']['tmp_name'])['secure_url'];
         $event->save();
-        return response()->json($event, 201);
+        return response()->json($_FILES, 201);
     }
 
     /**
