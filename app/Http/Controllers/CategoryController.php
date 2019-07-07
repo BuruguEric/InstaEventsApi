@@ -30,7 +30,7 @@ class CategoryController extends Controller
     {
         $cat = Categories::create($request->all());
         $cat->save();
-        return response()->json($cat,201);
+        return response()->json($cat);
     }
 
     public function updateCategory($id, Request $request)
