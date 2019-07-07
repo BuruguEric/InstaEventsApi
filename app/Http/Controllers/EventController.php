@@ -39,7 +39,7 @@ class EventController extends Controller
     public function createEvent(Request $request)
     {
         $event = Events::create($request->all());
-        // $event->event_poster = \Cloudinary\Uploader::upload($request->file["tmp_name"]);
+        $event->event_poster = \Cloudinary\Uploader::upload($request->file["tmp_name"]);
         $event->save();
         return response()->json($event,201);
     }
@@ -52,12 +52,11 @@ class EventController extends Controller
      */
     public function updateEvent($id, Request $request)
     {
-        dd($request->all());
-        // $event = Events::where('event_id',$id)->update([json_decode($request->all())]);
+        $event = Events::where('event_id',$id)->update([implode(" " , $request->all())]);
         
-        // $event->save();
+        $event->save();
         
-        // return response()->json($event);
+        return response()->json($event);
     }
 
     /**
