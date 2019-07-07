@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventsTables extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,14 +15,14 @@ class CreateEventsTables extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('event_id');
-            $table->bigInteger('category_id')->unsigned()->nullable();
-            $table->foreign('category_id')->references('category_id')->on('categories')->onDelete('cascade');
+            $table->string('category')->unique()->nullable();
+            $table->foreign('category')->references('category')->on('categories')->onDelete('cascade');
             $table->string('event_name');
             $table->text('event_description');
-            $table->string('event_location'); 
-            
+            $table->string('event_location')->nullable(); 
+            $table->string('event_date')->nullable();
             $table->string('event_host')->nullable();
-
+            $table->string('event_time')->nullable();
             $table->string('event_artists')->nullable();
             $table->string('event_poster')->nullable();
             $table->timestamps();
