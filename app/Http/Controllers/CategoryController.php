@@ -35,7 +35,7 @@ class CategoryController extends Controller
 
     public function updateCategory($id, Request $request)
     {
-        $cat = Categories::where('category_id',$id)->update([$request->all()]);
+        $cat = Categories::where('category_id',$id)->update([json_encode($request->all())]);
         $cat->save();
         return response()->json($cat);
     }
