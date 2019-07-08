@@ -15,7 +15,7 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('event_id');
-            $table->string('category')->unique()->nullable();
+            $table->string('category')->nullable();
             $table->foreign('category')->references('category')->on('categories')->onDelete('cascade');
             $table->string('event_name');
             $table->text('event_description');
