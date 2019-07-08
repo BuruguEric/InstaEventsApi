@@ -50,7 +50,7 @@ class CategoryController extends Controller
 
     public function deleteCategory($id)
     {
-        $cat = Categories::where('category_id',$id)->get();
+        $cat = Categories::where('category',$id)->get();
         $cat->each->delete();
         return response()->json('Category deleted successfully!');
     }
