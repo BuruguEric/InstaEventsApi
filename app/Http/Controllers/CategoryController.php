@@ -29,7 +29,8 @@ class CategoryController extends Controller
     public function createCategories(Request $request)
     {
         $cat = Categories::create($request->all());
-        // $cat->save();
+        $event->category_poster = \Cloudinary\Uploader::upload($request->category_poster->getRealPath())['secure_url'];
+        $event->save();
         return response()->json($cat);
     }
 
