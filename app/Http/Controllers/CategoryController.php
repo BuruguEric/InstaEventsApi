@@ -28,10 +28,9 @@ class CategoryController extends Controller
 
     public function createCategories(Request $request)
     {
-        dd($request);
-        // $cat = Categories::create($request->all());
-        // // $cat->save();
-        // return response()->json($cat);
+        $cat = Categories::create($request->all());
+        // $cat->save();
+        return response()->json($cat);
     }
 
     public function updateCategory($id, Request $request)
