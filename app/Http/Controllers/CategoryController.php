@@ -9,6 +9,13 @@ use App\Http\Resources\category;
 
 class CategoryController extends Controller
 {
+    public function __construct() {
+        \Cloudinary::config(array(
+            "cloud_name" => env("CLOUDINARY_NAME"),
+            "api_key" => env("CLOUDINARY_API_KEY"),
+            "api_secret" => env("CLOUDINARY_API_SECRET")
+        ));
+    }
     /**
      * Display a listing of the resource.
      *
