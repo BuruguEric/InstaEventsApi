@@ -20,9 +20,9 @@ class CategoryController extends Controller
         return category::collection($cat);
     }
 
-    public function showCategory($id)
+    public function showCategory($category)
     {
-        $cat = Categories::find($id);
+        $cat = Categories::find($category);
         return response()->json($cat);
     }
 
@@ -33,10 +33,10 @@ class CategoryController extends Controller
         return response()->json($cat);
     }
 
-    public function updateCategory($id, Request $request)
+    public function updateCategory($category, Request $request)
     {
-        $cat = Categories::where('category_id',$id)->update([json_decode($request->all())]);
-        $cat->save();
+        $cat = Categories::find($category)->update(($request->all()));
+        // $cat->save();
         return response()->json($cat);
     }
 
