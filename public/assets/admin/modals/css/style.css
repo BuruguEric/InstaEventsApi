@@ -1,0 +1,60 @@
+/*
+*
+* MODAL MEDIA
+*
+*/
+
+/**
+ * Upload
+ */
+
+.upload-zone {
+
+}
+
+.upload-area {
+
+
+}
+
+.upload-box {
+
+	margin: 2% 38%;
+	width: 60%;
+
+}
+
+.drop-upload {
+
+	margin: 2% 27%;
+}
+
+.upload-btn > button {
+
+	margin: 2% 39%;
+}
+
+.upload-txt {
+
+	font-size: 11px;
+	margin: 0 41%;
+} 
+
+#media-edit {
+
+	border-right: 1px dashed #000;
+	height: 466px;
+}
+
+.insert-setting {
+
+	background-color: #909090fa;
+	padding: 5%;
+	height: 466px;
+}
+
+.insert-setting > h4, .insert-setting > p {
+
+	color: #fff !important;
+}
+

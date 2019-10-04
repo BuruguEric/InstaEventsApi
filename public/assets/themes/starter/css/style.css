@@ -1,0 +1,21 @@
+
+body{
+	font-family: sans-serif;
+	padding: 20px;
+	width: 80%;
+
+}
+
+h1{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+p{
+	font-size: 12px;
+}
+
+a{
+	text-decoration: underline;
+	color: blue;
+}
